@@ -128,6 +128,7 @@ void loop() {
         if (currentMillis - previousMillis >= intervalRojo) {
           digitalWrite(LedRojo, LOW); // Apaga el LED rojo
           currentState = VERDE;       // Cambia al estado verde
+          digitalWrite(LedVerde, HIGH); // Enciende nuevamente el LED verde
           previousMillis = currentMillis; // Reinicia el temporizador
         }
         break;
@@ -173,7 +174,5 @@ void loop() {
   Serial.print(", led amarillo: ");
   Serial.print(digitalRead(LedAmarillo));
   Serial.print(", led rojo: ");
-  Serial.print(digitalRead(LedRojo));
-  Serial.print(", led transferencia: ");
-  Serial.println(digitalRead(LedEntradaDatos));
+  Serial.println(digitalRead(LedRojo));
 }
