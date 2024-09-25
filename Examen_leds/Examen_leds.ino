@@ -42,6 +42,10 @@ bool lastBotonArranque = HIGH;                   // Último estado del botón de
 bool lastBotonParo = HIGH;                       // Último estado del botón de paro
 
 void setup() {
+
+  Serial.begin(9600);
+   Serial.println("Configuración inicial completa");
+    
   // Configuración de pines como salida
   pinMode(LedVerde, OUTPUT);
   pinMode(LedAmarillo, OUTPUT);
@@ -49,8 +53,8 @@ void setup() {
   pinMode(LedEntradaDatos, OUTPUT);              // Configurar LED de entrada de datos como salida
 
   // Configuración de los botones como entradas con resistencia pull-up
-  pinMode(BotonArranque, INPUT_PULLUP);         // Configurar botón de arranque como entrada
-  pinMode(BotonParo, INPUT_PULLUP);             // Configurar botón de paro como entrada
+  pinMode(BotonArranque, INPUT);         // Configurar botón de arranque como entrada
+  pinMode(BotonParo, INPUT);             // Configurar botón de paro como entrada
 
   // Inicializar todos los LEDs apagados
   digitalWrite(LedVerde, LOW);
@@ -61,6 +65,7 @@ void setup() {
   // Encender el LED verde
   digitalWrite(LedVerde, HIGH);  // Enciende el LED verde
   previousMillis = millis();      // Reinicia el temporizador para el LED verde
+  delay(.1);
   previousBlinkMillis = millis(); // Reinicia el temporizador para el LED de entrada de datos
 }
 
