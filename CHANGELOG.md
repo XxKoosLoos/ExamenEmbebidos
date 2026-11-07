@@ -10,3 +10,10 @@
 - **Validación:** revisión documental. No se ejecutaron aplicaciones ni se realizaron pruebas de hardware.
 - **Historial:** se conservan los commits y ramas originales, sin reescritura del historial.
 - **Límites:** no se modificaron fuentes ni dependencias ni se añadieron funcionalidades.
+
+### Exclusiones de archivos locales — 2026-11-07 (UTC)
+
+- **Motivo:** evitar incorporar nuevos entornos virtuales, cachés, configuraciones locales potencialmente sensibles y metadatos de editores.
+- **Alcance:** incorporación de `.gitignore` en [`3a77bd8`](https://github.com/XxKoosLoos/ExamenEmbebidos/commit/3a77bd8e1821ce0519f2a97ce75320ef8029c98b) y actualización de este registro.
+- **Validación:** el parche se comprobó en un repositorio temporal independiente: 11 rutas excluidas y cuatro rutas permitidas, incluidas fuentes y `.env.example`.
+- **Límites:** los archivos ya versionados permanecen en Git; no se eliminaron entornos ni secretos históricos. No se modificaron código, dependencias ni historial original. Las plantillas `.env.example` requieren revisión de contenido antes de publicarse.
