@@ -1,0 +1,19 @@
+# Entornos locales
+.venv/
+venv/
+Entorno/
+
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Configuracion local potencialmente sensible
+.env
+.env.*
+!.env.example
+
+# Metadatos del sistema y editores
+.DS_Store
+Thumbs.db
+.idea/
